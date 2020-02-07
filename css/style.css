@@ -10,7 +10,7 @@ section {
   padding:1em;
 }
 .view input{
-  width:100%;
+  width:60%;
   padding:0.5em;
   margin-bottom:0.5em;
 }
@@ -18,4 +18,9 @@ section {
    padding:1em;
    width:20%;
    margin:0.2em;
+}
+[data-js="remove"] {
+  padding:0.5em;
+  width:20%;
+  margin-bottom:0.5em
 }
