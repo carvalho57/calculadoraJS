@@ -33,6 +33,7 @@
     value1: 0,
     operator: null,    
     value2: null,
+    setOperation: null,
     exec: function exec() {
         var functionMath  = chooseOperation(this.operator);
         var result =  functionMath(this.value1, this.value2);
@@ -49,14 +50,19 @@
           
   $digits.forEach(function (element) {
     element.addEventListener('click', function (event) {
-      event.preventDefault();                  
+      event.preventDefault();      
+      if($input.value === '0') {
+        $input.value = this.value;
+        return;
+      }        
+          
       $input.value += this.value;         
     },false);
   });
 
   $operator.forEach(function (element) {
     element.addEventListener('click', function (event) {
-      event.preventDefault();
+      event.preventDefault();      
       setOperation(this.value);      
     },false);
   })     
@@ -70,14 +76,17 @@
     progress.value1  = Number($input.value);
     progress.operator = oper;   
     $input.value = "";
+    progress.setOperation = true;
   }
 
 
   function calc() {     
-    //Corrigir   
-    if(Number($input.value) !== Number(progress.value1)) {
+   
+    if(progress.setOperation) {
         progress.value2 = Number($input.value)
     }
-      $input.value = progress.exec();
+
+    $input.value = progress.exec();
+    progress.setOperation = false;
   }
 })(window,document);
