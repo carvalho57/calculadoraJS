@@ -4,14 +4,21 @@
       <meta charset="utf-8">
       <title> Calculator </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="css/style.css" >
+      <link rel="stylesheet" href="css/style.css" >     
   <head>
-  <body>
+  <body>         
+      <div data-js="modal" class="modal">
+        <h1 data-js="welcome">
+          3
+        </h1>
+      </div>
     <section>
-      <h2>Calculator</h2>
       <div class='view'>
-        <input  type="text" data-js="input" readonly>
-        <button  data-js="remove"> <- </button>
+          <input  type="text" data-js="input" readonly>
+          <div class="buttons">
+            <button data-js="remove"> <- </button>
+            <button data-js="CE">CE</button>
+          </div>
       </div>
       <div class="buttons">
           <button data-js="digit" value="7">7</button>
@@ -34,7 +41,7 @@
           <button data-js="calcular">=</button>
           <button data-js="operator" value="+">+</button>
       </div>      
-    </section>
+    </section>    
     <script src="js/main.js"></script>
   </body>
 </html>
